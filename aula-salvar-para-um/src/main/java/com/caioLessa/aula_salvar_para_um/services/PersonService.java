@@ -21,6 +21,6 @@ public class PersonService {
         Department dept = new Department();
         dept.setId(entity.getDepartment().getId());
         entity.setDepartment(dept);
-
+        return new PersonDepartmentDTO(entity);
     }
 }
