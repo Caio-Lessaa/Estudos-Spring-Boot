@@ -1,5 +1,7 @@
 package com.caioLessa.aula_salvar_para_um.dto;
 
+import com.caioLessa.aula_salvar_para_um.entities.Person;
+
 public class PersonDepartmentDTO {
     private Long id;
     private String name;
@@ -11,6 +13,13 @@ public class PersonDepartmentDTO {
         this.name = name;
         this.salary = salary;
         this.department = department;
+    }
+
+    public PersonDepartmentDTO(Person entity) {
+        id = entity.getId();
+        name = entity.getName();
+        salary = entity.getSalary();
+        department = new DepartmentDTO(entity.getDepartment());
     }
 
     public Long getId() {
